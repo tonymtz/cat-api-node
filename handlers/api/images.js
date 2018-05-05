@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const express = require('express');
 const dataProcessor = require('../../helpers/data-processor');
 const goodHttp = require('../../helpers/good-http');
@@ -30,7 +29,7 @@ router.get('/', function (req, res, next) {
                 .catch((err) => {
                     res.json({ error: err });
                 });
-        })
+        });
 });
 
 router.get('/fav', function (req, res, next) {
@@ -88,7 +87,7 @@ router.post('/fav/:imageId', function (req, res, next) {
                 .catch((err) => {
                     res.json({ error: err });
                 });
-        })
+        });
 });
 
 router.delete('/fav/:imageId', function (req, res, next) {
@@ -123,7 +122,7 @@ router.delete('/fav/:imageId', function (req, res, next) {
                 .catch((err) => {
                     res.json({ error: err });
                 });
-        })
+        });
 });
 
 module.exports = router;
